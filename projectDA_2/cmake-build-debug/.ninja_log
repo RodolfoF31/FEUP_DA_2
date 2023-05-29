@@ -1,8 +1,0 @@
-# ninja log v5
-80	725	7070768361495946	CMakeFiles/untitled2.dir/stadiums.cpp.obj	94f7df3f012fdc36
-225	786	7070768362171713	CMakeFiles/untitled2.dir/shipping.cpp.obj	c227f93298e42903
-167	1700	7070768371305773	CMakeFiles/untitled2.dir/tourism.cpp.obj	3596685b66f1d0ba
-2	1965	7070768373921704	CMakeFiles/untitled2.dir/main.cpp.obj	caf928bf10776119
-117	2182	7070768376129206	CMakeFiles/untitled2.dir/TSP.cpp.obj	9e3d4920ef5f7471
-44	2650	7070768380819675	CMakeFiles/untitled2.dir/Graph.cpp.obj	fc835e853a44958d
-2650	3244	7070768386615260	untitled2.exe	4911841c71b7f1fc
