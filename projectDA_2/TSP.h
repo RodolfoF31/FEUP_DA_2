@@ -22,7 +22,8 @@ public:
     void backtrack(int current, double cost, int visited);
     vector<int> solve();
     double getMinCost();
-
+    std::vector<int> triangularApproximation();
+    bool satisfiesTriangularInequality(int node1, int node2);
 
 
 };
