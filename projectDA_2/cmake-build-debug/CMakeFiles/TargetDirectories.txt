@@ -1,3 +1,3 @@
-C:/Users/Outros/2ndDA_Project/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/untitled2.dir
-C:/Users/Outros/2ndDA_Project/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Outros/2ndDA_Project/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xtreme/Desktop/DA/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/untitled2.dir
+/home/xtreme/Desktop/DA/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/xtreme/Desktop/DA/projetoDA2/projectDA_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

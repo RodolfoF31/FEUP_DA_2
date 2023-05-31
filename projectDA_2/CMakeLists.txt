@@ -3,4 +3,4 @@ project(untitled2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled2 main.cpp Graph.cpp Graph.h shipping.cpp shipping.h stadiums.cpp stadiums.h tourism.cpp tourism.h TSP.cpp TSP.h)
+add_executable(untitled2 main.cpp Graph.cpp Graph.h shipping.cpp shipping.h stadiums.cpp stadiums.h tourism.cpp tourism.h TSP.cpp TSP.h Utils/MenuMan.cpp)
