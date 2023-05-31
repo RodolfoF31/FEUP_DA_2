@@ -11,6 +11,10 @@ void Graph::addNode(const std::string& name) {
     if (nodeIndexMap.find(name) == nodeIndexMap.end()) {
         int index = nodeIndexMap.size();
         nodeIndexMap[name] = index;
+
+        for(auto &r : adjacencyMatrix) // fixed segmentation fault
+            r.resize(index + 1, 0.0);
+
         adjacencyMatrix.resize(index + 1, std::vector<double>(index + 1, 0.0));
     }
 }
@@ -36,7 +40,6 @@ double Graph::getDistancia(const std::string& origem, const std::string& destino
 }
 
 void Graph::loadGraphFromCSV(const std::string& filename) {
-
     ifstream file(filename);
     if (!file) {
         cout << "Error opening file: " << filename << std::endl;
@@ -47,7 +50,7 @@ void Graph::loadGraphFromCSV(const std::string& filename) {
     getline(file, line);
 
     while (getline(file, line)) {
-        stringstream iss(line);
+        istringstream iss(line);
         string from, to;
         double distance;
         getline(iss, from, ',');
@@ -61,6 +64,5 @@ void Graph::loadGraphFromCSV(const std::string& filename) {
         }
         addEdge(from, to, distance);
     }
-
     file.close();
 }
