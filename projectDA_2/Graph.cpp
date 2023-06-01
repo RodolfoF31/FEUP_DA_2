@@ -12,12 +12,30 @@ void Graph::addNode(const std::string& name) {
         int index = nodeIndexMap.size();
         nodeIndexMap[name] = index;
 
-        for(auto &r : adjacencyMatrix) // fixed segmentation fault
+        for(auto &r : adjacencyMatrix)
             r.resize(index + 1, 0.0);
 
         adjacencyMatrix.resize(index + 1, std::vector<double>(index + 1, 0.0));
     }
 }
+
+void Graph::addNodeRealGraph(int id, double longitude, double latitude) {
+
+    string name = to_string(id);
+
+    if (nodeIndexMap.find(name) == nodeIndexMap.end()) {
+        int index = nodeIndexMap.size();
+        nodeIndexMap[name] = index;
+
+        for (auto& row : adjacencyMatrix)
+            row.resize(index + 1, 0.0);
+        adjacencyMatrix.resize(index + 1, std::vector<double>(index + 1, 0.0));
+
+        longitudeMap[name] = longitude;
+        latitudeMap[name] = latitude;
+    }
+}
+
 
 void Graph::addEdge(const std::string& origem, const std::string& destino, double distancia) {
     int fromIndex = nodeIndexMap[origem];
@@ -80,11 +98,17 @@ void Graph::loadRealWorldGraphFromCSV(const std::string &nodesFile, const std::s
 
     while(getline(file, line)){
         istringstream iss(line);
-        string id, longitude, latitude;
-        getline(iss, id, ',');
-        getline(iss, longitude, ',');
-        getline(iss, latitude, ',');
-        //TODO add node com longitudes e latitudes com id
+        string idStr, longitudeStr, latitudeStr;
+        getline(iss, idStr, ',');
+        getline(iss, longitudeStr, ',');
+        getline(iss, latitudeStr, ',');
+
+        int id = stoi(idStr);
+        double longitude = stod(longitudeStr);
+        double latitude = stod(latitudeStr);
+
+        addNodeRealGraph(id, longitude, latitude);
+
     }
     file.close();
 
