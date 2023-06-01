@@ -18,10 +18,13 @@ void backtrack(){ // will be taken off later just to check if all things are wor
 
 void displayAlgorithms(){
     while(true){
-        int choice = MenuMan::createMenu("\nSelect the algorithm: ", {"backtrack"});
+        int choice = MenuMan::createMenu("\nSelect the algorithm: ", {"backtrack", "triangular aproximation"});
         switch (choice) {
             case 1:
                 backtrack();
+                return;
+            case 2:
+                tsp.triangularApproximation();
                 return;
             default:
                 std::cout << "\nPlease, select a valid option!" << endl;
