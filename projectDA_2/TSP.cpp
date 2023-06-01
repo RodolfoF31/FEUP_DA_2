@@ -13,6 +13,10 @@ void TSP::loadGraph(const std::string& filename) {
     graph.loadGraphFromCSV(filename);
 }
 
+void TSP::loadRealWorldGraph(const std::string &nodesFile, const std::string &edgesFile) {
+    graph.loadRealWorldGraphFromCSV(nodesFile, edgesFile);
+}
+
 void TSP::backtrack(int current, double cost, std::vector<bool>& visited_nodes) {
     int n = graph.getNumNodes();
     if(visited_nodes[current])

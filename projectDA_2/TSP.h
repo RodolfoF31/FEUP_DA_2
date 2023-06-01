@@ -19,6 +19,7 @@ private:
 public:
     TSP();
     void loadGraph(const std::string& filename);
+    void loadRealWorldGraph(const std::string &nodesFile, const std::string &edgesFile);
     void backtrack(int current, double cost, std::vector<bool>& visited_nodes);
     vector<int> solve();
     double getMinCost();

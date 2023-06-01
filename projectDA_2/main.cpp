@@ -5,7 +5,7 @@
 
 TSP tsp;
 
-void test(){ // will be taken off later just to check if all things are working alright
+void backtrack(){ // will be taken off later just to check if all things are working alright
     std::vector<int> path = tsp.solve();
 
     std::cout << "Minimum cost: " << tsp.getMinCost() << std::endl;
@@ -16,23 +16,49 @@ void test(){ // will be taken off later just to check if all things are working 
     std::cout << std::endl;
 }
 
+void displayAlgorithms(){
+    while(true){
+        int choice = MenuMan::createMenu("\nSelect the algorithm: ", {"backtrack"});
+        switch (choice) {
+            case 1:
+                backtrack();
+                return;
+            default:
+                std::cout << "\nPlease, select a valid option!" << endl;
+                break;
+        }
+    }
+}
+
 void displayMainMenu(){
     while(true){
-        int choice = MenuMan::createMenu("\nSelect the graph: ", {"shipping.csv", "stadiums.csv", "tourism.csv", "Exit"});
+        int choice = MenuMan::createMenu("\nSelect the graph: ", {"shipping.csv", "stadiums.csv", "tourism.csv", "graph1", "graph2", "graph3", "Exit"});
         switch(choice){
             case 1:
                 tsp.loadGraph("../data/Toy_Graphs/Toy-Graphs/shipping.csv");
-                test();
+                displayAlgorithms();
                 break;
             case 2:
                 tsp.loadGraph("../data/Toy_Graphs/Toy-Graphs/stadiums.csv");
-                test();
+                displayAlgorithms();
                 break;
             case 3:
                 tsp.loadGraph("../data/Toy_Graphs/Toy-Graphs/tourism.csv");
-                test();
+                displayAlgorithms();
                 break;
             case 4:
+                tsp.loadRealWorldGraph("../data/Real_World_Graphs_/Real-world-Graphs/graph1/nodes.csv", "../data/Real_World_Graphs_/Real-world-Graphs/graph1/edges.csv");
+                displayAlgorithms();
+                break;
+            case 5:
+                tsp.loadRealWorldGraph("../data/Real_World_Graphs_/Real-world-Graphs/graph2/nodes.csv", "../data/Real_World_Graphs_/Real-world-Graphs/graph2/edges.csv");
+                displayAlgorithms();
+                break;
+            case 6:
+                tsp.loadRealWorldGraph("../data/Real_World_Graphs_/Real-world-Graphs/graph3/nodes.csv", "../data/Real_World_Graphs_/Real-world-Graphs/graph3/edges.csv");
+                displayAlgorithms();
+                break;
+            case 7:
                 return;
             default:
                 std::cout << "\nPlease, select a valid option!" << endl;

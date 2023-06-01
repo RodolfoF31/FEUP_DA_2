@@ -66,3 +66,45 @@ void Graph::loadGraphFromCSV(const std::string& filename) {
     }
     file.close();
 }
+
+void Graph::loadRealWorldGraphFromCSV(const std::string &nodesFile, const std::string &edgesFile) {
+    ifstream file(nodesFile);
+
+    if(!file){
+        cout << "Error opening file: " << nodesFile << std::endl;
+        return;
+    }
+
+    string line;
+    getline(file, line);
+
+    while(getline(file, line)){
+        istringstream iss(line);
+        string id, longitude, latitude;
+        getline(iss, id, ',');
+        getline(iss, longitude, ',');
+        getline(iss, latitude, ',');
+        //TODO add node com longitudes e latitudes com id
+    }
+    file.close();
+
+    ifstream file2(edgesFile);
+
+    if(!file2){
+        cout << "Error opening file: " << edgesFile << std::endl;
+        return;
+    }
+
+    getline(file2, line);
+
+    while(getline(file2, line)){
+        istringstream iss(line);
+        string from, to;
+        double distance;
+        getline(iss, from, ',');
+        getline(iss, to, ',');
+        iss >> distance;
+        addEdge(from, to, distance);
+    }
+    file2.close();
+}

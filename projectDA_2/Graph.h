@@ -26,6 +26,7 @@ public:
     double getDistancia(int origem, int destino) const;
     double getDistancia(const std::string& origem, const std::string& destino) const;
     void loadGraphFromCSV(const std::string& filename);
+    void loadRealWorldGraphFromCSV(const std::string& nodesFile, const std::string& edgesFile);
 };
 
 #endif  // GRAPH_H
