@@ -49,7 +49,7 @@ void TSP::backtrack(int current, double cost, std::vector<bool>& visited_nodes) 
 
 vector<int> TSP::solve() {
     int n = graph.getNumNodes();
-    path.resize(n + 1, -1);  // Initialize path with size n + 1
+    path.resize(n + 1, -1);
     path[0] = 0;
     std::vector<bool> visited_nodes(n, false);
     visited_nodes[0] = true;
