@@ -40,95 +40,97 @@ int main() {
 
                 cin >> option2;
 
-            switch(option2) {
-                case 1:
-                    {
-                        fileman = Fileman();
-                        fileman.loadShipping("Toy_Graphs/Toy-Graphs/shipping.csv");
+                switch(option2) {
+                    case 1:
+                        {
+                            fileman = Fileman();
+                            fileman.loadShipping("Toy_Graphs/Toy-Graphs/shipping.csv");
 
-                        Graph shippingGraph = fileman.getGraph();
+                            Graph shippingGraph = fileman.getGraph();
 
-                        auto start = chrono::high_resolution_clock::now();
-                        shippingGraph.tspBacktracking();
-                        auto end = chrono::high_resolution_clock::now();
+                            auto start = chrono::high_resolution_clock::now();
+                            shippingGraph.tspBacktracking();
+                            auto end = chrono::high_resolution_clock::now();
 
-                        auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 
-                        minCost = shippingGraph.getMinCost();
-                        minPath = shippingGraph.getBestPath();
+                            minCost = shippingGraph.getMinCost();
+                            minPath = shippingGraph.getBestPath();
 
-                        cout << "Minimum Cost: " << minCost << endl;
-                        cout << "Best Path: ";
-                        for (int node : minPath) {
-                            cout << node << " ";
-                        }
-                        cout << endl;
+                            cout << "Minimum Cost: " << minCost << endl;
+                            cout << "Best Path: ";
+                            for (int node : minPath) {
+                                cout << node << " ";
+                            }
+                            cout << endl;
 
-                        cout << "Execution Time = " << duration << "ms" << endl;
-                        cout << endl;
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
 
-                        break;
-                    }
-
-                case 2:
-                    {
-                        fileman = Fileman();
-                        fileman.loadStadiums("Toy_Graphs/Toy-Graphs/stadiums.csv");
-
-                        Graph stadiumsGraph = fileman.getGraph();
-
-                        auto start = chrono::high_resolution_clock::now();
-                        stadiumsGraph.tspBacktracking();
-                        auto end = chrono::high_resolution_clock::now();
-
-                        auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
-
-                        minCost = stadiumsGraph.getMinCost();
-                        minPath = stadiumsGraph.getBestPath();
-
-                        cout << "Minimum Cost: " << minCost << endl;
-                        cout << "Best Path: ";
-                        for (int node : minPath) {
-                            cout << node << " ";
+                            break;
                         }
 
-                        cout << endl;
+                    case 2:
+                        {
+                            fileman = Fileman();
+                            fileman.loadStadiums("Toy_Graphs/Toy-Graphs/stadiums.csv");
 
-                        cout << "Execution Time = " << duration << "ms" << endl;
-                        cout << endl;
+                            Graph stadiumsGraph = fileman.getGraph();
 
-                        break;
-                    }
-                case 3:
-                    {
-                        fileman = Fileman();
-                        fileman.loadTourism("Toy_Graphs/Toy-Graphs/tourism.csv");
+                            auto start = chrono::high_resolution_clock::now();
+                            stadiumsGraph.tspBacktracking();
+                            auto end = chrono::high_resolution_clock::now();
 
-                        Graph tourismGraph = fileman.getGraph();
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 
-                        auto start = chrono::high_resolution_clock::now();
-                        tourismGraph.tspBacktracking();
-                        auto end = chrono::high_resolution_clock::now();
+                            minCost = stadiumsGraph.getMinCost();
+                            minPath = stadiumsGraph.getBestPath();
 
-                        auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+                            cout << "Minimum Cost: " << minCost << endl;
+                            cout << "Best Path: ";
+                            for (int node : minPath) {
+                                cout << node << " ";
+                            }
 
-                        minCost = tourismGraph.getMinCost();
-                        minPath = tourismGraph.getBestPath();
+                            cout << endl;
 
-                        cout << "Minimum Cost: " << minCost << endl;
-                        cout << "Best Path: ";
-                        for (int node : minPath) {
-                            cout << node << " ";
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
+
+                            break;
                         }
+                    case 3:
+                        {
+                            fileman = Fileman();
+                            fileman.loadTourism("Toy_Graphs/Toy-Graphs/tourism.csv");
 
-                        cout << endl;
+                            Graph tourismGraph = fileman.getGraph();
 
-                        cout << "Execution Time = " << duration << "ms" << endl;
-                        cout << endl;
+                            auto start = chrono::high_resolution_clock::now();
+                            tourismGraph.tspBacktracking();
+                            auto end = chrono::high_resolution_clock::now();
 
-                        break;
-                    }
-            }
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+
+                            minCost = tourismGraph.getMinCost();
+                            minPath = tourismGraph.getBestPath();
+
+                            cout << "Minimum Cost: " << minCost << endl;
+                            cout << "Best Path: ";
+                            for (int node : minPath) {
+                                cout << node << " ";
+                            }
+
+                            cout << endl;
+
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
+
+                            break;
+                        }
+                }
+                break; // Add this break statement
+
             case 2:
 
                 cout << "1 - Graph 1" << endl;
@@ -140,7 +142,6 @@ int main() {
                 switch(option2) {
                     case 1:
                         {
-                            
                             fileman = Fileman();
                             fileman.loadGraph_RWG("Real_World_Graphs/Real-World Graphs/graph1/edges.csv", "Real_World_Graphs/Real-World Graphs/graph1/nodes.csv");
 
@@ -162,21 +163,74 @@ int main() {
                                 cout << "Minimum Cost: " << minCost << " meters" << endl;
                             }
 
-                            
-
                             cout << "Execution Time = " << duration << "ms" << endl;
                             cout << endl;
 
                             break; 
 
                         }
-                }
+                    case 2:
+                        {
+                            fileman = Fileman();
+                            fileman.loadGraph_RWG("Real_World_Graphs/Real-World Graphs/graph2/edges.csv", "Real_World_Graphs/Real-World Graphs/graph2/nodes.csv");
 
-            break;
+                            Graph graph2 = fileman.getGraph();
+
+                            auto start = chrono::high_resolution_clock::now();
+                            graph2.tspTriangularApproximation();
+                            auto end = chrono::high_resolution_clock::now();
+
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+
+                            minCost = graph2.getMinCost();
+
+                            if (minCost == numeric_limits<double>::infinity()) {
+                                cout << "No valid path found." << endl;
+                            }
+
+                            else {
+                                cout << "Minimum Cost: " << minCost << " meters" << endl;
+                            }
+
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            fileman = Fileman();
+                            fileman.loadGraph_RWG("Real_World_Graphs/Real-World Graphs/graph3/edges.csv", "Real_World_Graphs/Real-World Graphs/graph3/nodes.csv");
+
+                            Graph graph3 = fileman.getGraph();
+
+                            auto start = chrono::high_resolution_clock::now();
+                            graph3.tspTriangularApproximation();
+                            auto end = chrono::high_resolution_clock::now();
+
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+
+                            minCost = graph3.getMinCost();
+
+                            if (minCost == numeric_limits<double>::infinity()) {
+                                cout << "No valid path found." << endl;
+                            }
+
+                            else {
+                                cout << "Minimum Cost: " << minCost << " meters" << endl;
+                            }
+
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
+
+                            break;
+                        }
+                }
+                break;
         }
 
     } while(option != 9);
 
     return 0;
-    
+
 }
