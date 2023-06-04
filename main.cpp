@@ -129,7 +129,7 @@ int main() {
                             break;
                         }
                 }
-                break; // Add this break statement
+                break;
 
             case 2:
 
