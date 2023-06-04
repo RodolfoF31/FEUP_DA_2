@@ -1,0 +1,77 @@
+\hypertarget{_graph_8h_source}{}\doxysection{Graph.\+h}
+\mbox{\hyperlink{_graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GRAPH\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GRAPH\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_edge}{Edge}} \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_edge_a471c3b337fdcdd7072812c0d46f5df4d}{destino}};}
+\DoxyCodeLine{13     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_edge_aeb72b4e102f5bf96dd0c0957010d5fb6}{distancia}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_node}{Node}} \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_node_a59a543130a10c95f1e8642cf8c5645e8}{id}};}
+\DoxyCodeLine{21     vector<Edge> \mbox{\hyperlink{struct_node_a6e7ec243e5ae4e031c2eda753bfc7065}{adj}};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_node_aa1bdec4e775fc578632e6a2dced9e251}{visited}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_node___r_w_g}{Node\_RWG}} \{}
+\DoxyCodeLine{27     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_node___r_w_g_a553b350aaca9f0e7003c6dbab8c25eb1}{longitude}};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_node___r_w_g_ae9ce7b6eec0b27b60a08899eab42e46e}{latitude}};}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_edge___r_w_g}{Edge\_RWG}} \{}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_edge___r_w_g_af4975fd358a9e40fee9f65060db966f6}{origin}};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_edge___r_w_g_a80ab5f7aaa6e1e5a4230c3b500802748}{destination}};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_edge___r_w_g_aefa5b9dbc7757a0c624a948cebf3edb9}{distance}};}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{class_graph}{Graph}} \{}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}}();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_ad95aef3970ce701d8f89ad4485127f99}{addNode\_RWG}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{double} longitude, \textcolor{keywordtype}{double} latitude);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_ae5783fef9d7c4a7776358ab1b18ca8a7}{addEdge\_RWG}}(\textcolor{keywordtype}{int} origin, \textcolor{keywordtype}{int} destination, \textcolor{keywordtype}{double} distance);}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_afe4afa47b86c9ced3a3c64873ea9388a}{addEdge}}(\textcolor{keywordtype}{int} origem, \textcolor{keywordtype}{int} destino, \textcolor{keywordtype}{double} distancia);}
+\DoxyCodeLine{69     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_aa9584cbd89db821348d0e019ee9457ae}{getMinCost}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a27e437958267353f4d3b889a16828b6e}{getDistance}}(\textcolor{keywordtype}{int} source, \textcolor{keywordtype}{int} destination);}
+\DoxyCodeLine{82     vector<int> \mbox{\hyperlink{class_graph_a1638b7cf4d451d148b3db8377372b0e1}{getBestPath}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a475e4fc3514ebd7c0e6cb085a052a50f}{tspBacktracking}}();}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a99ed70e7026d9638753681e0c052f7cb}{tspBacktrackingUtil}}(\textcolor{keywordtype}{int} currNode, \textcolor{keywordtype}{int} depth, \textcolor{keywordtype}{double} currCost);}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a631d624a7d508563ac165fe1add39e7f}{tspBacktracking\_RWG}}();}
+\DoxyCodeLine{111     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a5d9816ca66208318b4092a55b9ad988e}{tspTriangularApproximation}}();}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_ab277804b958e9fa0788429621b2ce64c}{backtrack}}(vector<int>\& path, vector<bool>\& visited, \textcolor{keywordtype}{int} current, \textcolor{keywordtype}{double} cost);}
+\DoxyCodeLine{129     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a8ee6f41f6163eabf16dae592fca1f01c}{calculateCost}}(\textcolor{keyword}{const} std::vector<int>\& path);}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_a00c89f9300992b2ac69104bb7ddcc868}{resetVisited}}();}
+\DoxyCodeLine{143     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a40d904edca96118ab34449d5ff9761fe}{calculateDistance}}(\textcolor{keywordtype}{int} origin, \textcolor{keywordtype}{int} destination);}
+\DoxyCodeLine{148     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graph_aab305082de840439075d909d5ae97a38}{calculateGeographicDistances}}();}
+\DoxyCodeLine{155     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_ac10c4a0ead77531d1d4e298d5720db34}{calculatePathCost}}(\textcolor{keyword}{const} vector<int>\& path);}
+\DoxyCodeLine{165     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a34de057443112c13b150c60e37a68906}{calculateHaversineDistance}}(\textcolor{keywordtype}{double} lat1, \textcolor{keywordtype}{double} lon1, \textcolor{keywordtype}{double} lat2, \textcolor{keywordtype}{double} lon2);}
+\DoxyCodeLine{172     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_graph_a46002b237bde23afc97582dcc0a38611}{toRadians}}(\textcolor{keywordtype}{double} degrees);}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{keyword}{private}:}
+\DoxyCodeLine{176     unordered\_map<int, Node\_RWG> Nodes\_RWG;}
+\DoxyCodeLine{177     unordered\_map<int, Node> Nodes;}
+\DoxyCodeLine{178     \textcolor{keywordtype}{double} minCost;}
+\DoxyCodeLine{179     vector<int> currentPath;}
+\DoxyCodeLine{180     vector<int> bestPath;}
+\DoxyCodeLine{181     \textcolor{keywordtype}{double} currentCost;}
+\DoxyCodeLine{182     vector<Edge\_RWG> edges;}
+\DoxyCodeLine{183     unordered\_map<int, unordered\_map<int, double>> distanceMatrix;}
+\DoxyCodeLine{184     \textcolor{keywordtype}{int} numNodes;}
+\DoxyCodeLine{185 \};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

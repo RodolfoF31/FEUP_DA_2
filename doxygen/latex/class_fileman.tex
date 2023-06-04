@@ -1,0 +1,144 @@
+\hypertarget{class_fileman}{}\doxysection{Fileman Class Reference}
+\label{class_fileman}\index{Fileman@{Fileman}}
+
+
+{\ttfamily \#include $<$Fileman.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fileman_a1293f13bef1d18ec849ee3231bdac12e}{Fileman}} ()
+\item 
+void \mbox{\hyperlink{class_fileman_a8a612e0ddfca96671eb7b5ab18a76c70}{load\+Shipping}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads shipping information from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fileman_a4542e88972ff0b81d0157f8900621d3b}{load\+Stadiums}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads stadium information from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fileman_a8ad5287fe576ba260a36cba9d77b14d0}{load\+Tourism}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads tourism information from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_fileman_a951f4791496e31a5c3b2a3b9f689a44d}{load\+Graph\+\_\+\+RWG}} (const std\+::string \&edges\+File, const std\+::string \&nodes\+File)
+\begin{DoxyCompactList}\small\item\em Loads graph data from edges/nodes files for Real World Graphs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph}{Graph}} \mbox{\hyperlink{class_fileman_ab1225e19eac83d6a9bad40a86854db7b}{get\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Getter for the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_fileman_a1293f13bef1d18ec849ee3231bdac12e}\label{class_fileman_a1293f13bef1d18ec849ee3231bdac12e}} 
+\index{Fileman@{Fileman}!Fileman@{Fileman}}
+\index{Fileman@{Fileman}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{Fileman()}{Fileman()}}
+{\footnotesize\ttfamily Fileman\+::\+Fileman (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fileman_ab1225e19eac83d6a9bad40a86854db7b}\label{class_fileman_ab1225e19eac83d6a9bad40a86854db7b}} 
+\index{Fileman@{Fileman}!getGraph@{getGraph}}
+\index{getGraph@{getGraph}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{getGraph()}{getGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph}{Graph}} Fileman\+::get\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for the graph. 
+
+\begin{DoxyReturn}{Returns}
+The loaded graph. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_fileman_a951f4791496e31a5c3b2a3b9f689a44d}\label{class_fileman_a951f4791496e31a5c3b2a3b9f689a44d}} 
+\index{Fileman@{Fileman}!loadGraph\_RWG@{loadGraph\_RWG}}
+\index{loadGraph\_RWG@{loadGraph\_RWG}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{loadGraph\_RWG()}{loadGraph\_RWG()}}
+{\footnotesize\ttfamily void Fileman\+::load\+Graph\+\_\+\+RWG (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{edges\+File,  }\item[{const std\+::string \&}]{nodes\+File }\end{DoxyParamCaption})}
+
+
+
+Loads graph data from edges/nodes files for Real World Graphs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edges\+File} & The name of the file containing the edges. \\
+\hline
+{\em nodes\+File} & The name of the file containing the nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(2 $\ast$ n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_fileman_a8a612e0ddfca96671eb7b5ab18a76c70}\label{class_fileman_a8a612e0ddfca96671eb7b5ab18a76c70}} 
+\index{Fileman@{Fileman}!loadShipping@{loadShipping}}
+\index{loadShipping@{loadShipping}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{loadShipping()}{loadShipping()}}
+{\footnotesize\ttfamily void Fileman\+::load\+Shipping (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads shipping information from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to load. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & If the file fails to open. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_fileman_a4542e88972ff0b81d0157f8900621d3b}\label{class_fileman_a4542e88972ff0b81d0157f8900621d3b}} 
+\index{Fileman@{Fileman}!loadStadiums@{loadStadiums}}
+\index{loadStadiums@{loadStadiums}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{loadStadiums()}{loadStadiums()}}
+{\footnotesize\ttfamily void Fileman\+::load\+Stadiums (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads stadium information from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to load. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & If the file fails to open. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_fileman_a8ad5287fe576ba260a36cba9d77b14d0}\label{class_fileman_a8ad5287fe576ba260a36cba9d77b14d0}} 
+\index{Fileman@{Fileman}!loadTourism@{loadTourism}}
+\index{loadTourism@{loadTourism}!Fileman@{Fileman}}
+\doxysubsubsection{\texorpdfstring{loadTourism()}{loadTourism()}}
+{\footnotesize\ttfamily void Fileman\+::load\+Tourism (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads tourism information from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to load. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & If the file fails to open. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_fileman_8h}{Fileman.\+h}}\item 
+\mbox{\hyperlink{_fileman_8cpp}{Fileman.\+cpp}}\end{DoxyCompactItemize}

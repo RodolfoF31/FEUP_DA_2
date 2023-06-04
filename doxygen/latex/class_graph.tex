@@ -1,0 +1,401 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}} ()
+\item 
+void \mbox{\hyperlink{class_graph_ad95aef3970ce701d8f89ad4485127f99}{add\+Node\+\_\+\+RWG}} (int id, double longitude, double latitude)
+\item 
+void \mbox{\hyperlink{class_graph_ae5783fef9d7c4a7776358ab1b18ca8a7}{add\+Edge\+\_\+\+RWG}} (int origin, int destination, double distance)
+\item 
+void \mbox{\hyperlink{class_graph_afe4afa47b86c9ced3a3c64873ea9388a}{add\+Edge}} (int origem, int destino, double distancia)
+\begin{DoxyCompactList}\small\item\em Adds an edge to the graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_aa9584cbd89db821348d0e019ee9457ae}{get\+Min\+Cost}} () const
+\begin{DoxyCompactList}\small\item\em Returns the minimum cost of the best path found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a27e437958267353f4d3b889a16828b6e}{get\+Distance}} (int source, int destination)
+\begin{DoxyCompactList}\small\item\em Returns the distance between two nodes in the graph. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{class_graph_a1638b7cf4d451d148b3db8377372b0e1}{get\+Best\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Returns the best path found in the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a475e4fc3514ebd7c0e6cb085a052a50f}{tsp\+Backtracking}} ()
+\begin{DoxyCompactList}\small\item\em Solves TSP using backtracking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a99ed70e7026d9638753681e0c052f7cb}{tsp\+Backtracking\+Util}} (int curr\+Node, int depth, double curr\+Cost)
+\begin{DoxyCompactList}\small\item\em Utility function for the backtracking algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a631d624a7d508563ac165fe1add39e7f}{tsp\+Backtracking\+\_\+\+RWG}} ()
+\begin{DoxyCompactList}\small\item\em Solves TSP for a real-\/world graph using backtracking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a5d9816ca66208318b4092a55b9ad988e}{tsp\+Triangular\+Approximation}} ()
+\begin{DoxyCompactList}\small\item\em Solves TSP for a real-\/world graph using a triangular approximation. This function solves the TSP for a real-\/world graph represented by the Nodes\+\_\+\+RWG structure using a triangular approximation approach. It calculates the geographic distances between nodes and builds a distance matrix. The function starts from node 0 and iteratively selects the next unvisited node with the shortest distance. It continues this process until all nodes are visited, forming a Hamiltonian cycle. The resulting path is stored in the best\+Path vector, and the minimum cost is calculated based on this path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_ab277804b958e9fa0788429621b2ce64c}{backtrack}} (vector$<$ int $>$ \&path, vector$<$ bool $>$ \&visited, int current, double cost)
+\begin{DoxyCompactList}\small\item\em This function performs backtracking to find the optimal Hamiltonian cycle (TSP solution). The algorithm explores all possible paths starting from node 0 and visiting each unvisited node exactly once. The function updates the minimum cost (min\+Cost) and the best path (best\+Path) whenever a better solution is found. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a8ee6f41f6163eabf16dae592fca1f01c}{calculate\+Cost}} (const std\+::vector$<$ int $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Calculate the cost of a given path in the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a00c89f9300992b2ac69104bb7ddcc868}{reset\+Visited}} ()
+\begin{DoxyCompactList}\small\item\em Reset the visited flag for all nodes in the graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a40d904edca96118ab34449d5ff9761fe}{calculate\+Distance}} (int origin, int destination)
+\begin{DoxyCompactList}\small\item\em Calculate the distance between two nodes using their geographic coordinates. It uses the Haversine formula to compute the great-\/circle distance between the two points on the Earth\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_aab305082de840439075d909d5ae97a38}{calculate\+Geographic\+Distances}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the geographic distances between nodes and populate the distance matrix. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_ac10c4a0ead77531d1d4e298d5720db34}{calculate\+Path\+Cost}} (const vector$<$ int $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Calculate the cost of a given path in the graph. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a34de057443112c13b150c60e37a68906}{calculate\+Haversine\+Distance}} (double lat1, double lon1, double lat2, double lon2)
+\begin{DoxyCompactList}\small\item\em Calculate the Haversine distance between two geographic coordinates. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_graph_a46002b237bde23afc97582dcc0a38611}{to\+Radians}} (double degrees)
+\begin{DoxyCompactList}\small\item\em Convert degrees to radians. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}\label{class_graph_ae4c72b8ac4d693c49800a4c7e273654f}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_afe4afa47b86c9ced3a3c64873ea9388a}\label{class_graph_afe4afa47b86c9ced3a3c64873ea9388a}} 
+\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{int}]{origem,  }\item[{int}]{destino,  }\item[{double}]{distancia }\end{DoxyParamCaption})}
+
+
+
+Adds an edge to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ID of the origin node of the edge. \\
+\hline
+{\em destination} & The ID of the destination node of the edge. \\
+\hline
+{\em distance} & The distance associated with the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_ae5783fef9d7c4a7776358ab1b18ca8a7}\label{class_graph_ae5783fef9d7c4a7776358ab1b18ca8a7}} 
+\index{Graph@{Graph}!addEdge\_RWG@{addEdge\_RWG}}
+\index{addEdge\_RWG@{addEdge\_RWG}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge\_RWG()}{addEdge\_RWG()}}
+{\footnotesize\ttfamily void Graph\+::add\+Edge\+\_\+\+RWG (\begin{DoxyParamCaption}\item[{int}]{origin,  }\item[{int}]{destination,  }\item[{double}]{distance }\end{DoxyParamCaption})}
+
+Adds an edge to the graph for Real World Graphs. 
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ID of the origin node of the edge. \\
+\hline
+{\em destination} & The ID of the destination node of the edge. \\
+\hline
+{\em distance} & The distance associated with the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_ad95aef3970ce701d8f89ad4485127f99}\label{class_graph_ad95aef3970ce701d8f89ad4485127f99}} 
+\index{Graph@{Graph}!addNode\_RWG@{addNode\_RWG}}
+\index{addNode\_RWG@{addNode\_RWG}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addNode\_RWG()}{addNode\_RWG()}}
+{\footnotesize\ttfamily void Graph\+::add\+Node\+\_\+\+RWG (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{double}]{longitude,  }\item[{double}]{latitude }\end{DoxyParamCaption})}
+
+Adds a node to the graph for Real World Graphs. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the node to add. \\
+\hline
+{\em longitude} & The longitude of the node\textquotesingle{}s location. \\
+\hline
+{\em latitude} & The latitude of the node\textquotesingle{}s location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_ab277804b958e9fa0788429621b2ce64c}\label{class_graph_ab277804b958e9fa0788429621b2ce64c}} 
+\index{Graph@{Graph}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily void Graph\+::backtrack (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{path,  }\item[{vector$<$ bool $>$ \&}]{visited,  }\item[{int}]{current,  }\item[{double}]{cost }\end{DoxyParamCaption})}
+
+
+
+This function performs backtracking to find the optimal Hamiltonian cycle (TSP solution). The algorithm explores all possible paths starting from node 0 and visiting each unvisited node exactly once. The function updates the minimum cost (min\+Cost) and the best path (best\+Path) whenever a better solution is found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A vector representing the current path being explored. \\
+\hline
+{\em visited} & A vector indicating whether each node has been visited or not. \\
+\hline
+{\em current} & The current node being visited. \\
+\hline
+{\em cost} & The cost of the current path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n!) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a8ee6f41f6163eabf16dae592fca1f01c}\label{class_graph_a8ee6f41f6163eabf16dae592fca1f01c}} 
+\index{Graph@{Graph}!calculateCost@{calculateCost}}
+\index{calculateCost@{calculateCost}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculateCost()}{calculateCost()}}
+{\footnotesize\ttfamily double Graph\+::calculate\+Cost (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Calculate the cost of a given path in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & A vector representing the path for which to calculate the cost. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cost of the path. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a40d904edca96118ab34449d5ff9761fe}\label{class_graph_a40d904edca96118ab34449d5ff9761fe}} 
+\index{Graph@{Graph}!calculateDistance@{calculateDistance}}
+\index{calculateDistance@{calculateDistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculateDistance()}{calculateDistance()}}
+{\footnotesize\ttfamily double Graph\+::calculate\+Distance (\begin{DoxyParamCaption}\item[{int}]{origin,  }\item[{int}]{destination }\end{DoxyParamCaption})}
+
+
+
+Calculate the distance between two nodes using their geographic coordinates. It uses the Haversine formula to compute the great-\/circle distance between the two points on the Earth\textquotesingle{}s surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The ID of the origin node. \\
+\hline
+{\em destination} & The ID of the destination node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the origin and destination nodes in meters. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_aab305082de840439075d909d5ae97a38}\label{class_graph_aab305082de840439075d909d5ae97a38}} 
+\index{Graph@{Graph}!calculateGeographicDistances@{calculateGeographicDistances}}
+\index{calculateGeographicDistances@{calculateGeographicDistances}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculateGeographicDistances()}{calculateGeographicDistances()}}
+{\footnotesize\ttfamily void Graph\+::calculate\+Geographic\+Distances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate the geographic distances between nodes and populate the distance matrix. 
+
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n$^\wedge$2) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a34de057443112c13b150c60e37a68906}\label{class_graph_a34de057443112c13b150c60e37a68906}} 
+\index{Graph@{Graph}!calculateHaversineDistance@{calculateHaversineDistance}}
+\index{calculateHaversineDistance@{calculateHaversineDistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculateHaversineDistance()}{calculateHaversineDistance()}}
+{\footnotesize\ttfamily double Graph\+::calculate\+Haversine\+Distance (\begin{DoxyParamCaption}\item[{double}]{lat1,  }\item[{double}]{lon1,  }\item[{double}]{lat2,  }\item[{double}]{lon2 }\end{DoxyParamCaption})}
+
+
+
+Calculate the Haversine distance between two geographic coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & Latitude of the first point in degrees. \\
+\hline
+{\em lon1} & Longitude of the first point in degrees. \\
+\hline
+{\em lat2} & Latitude of the second point in degrees. \\
+\hline
+{\em lon2} & Longitude of the second point in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Haversine distance between the two points in meters. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_ac10c4a0ead77531d1d4e298d5720db34}\label{class_graph_ac10c4a0ead77531d1d4e298d5720db34}} 
+\index{Graph@{Graph}!calculatePathCost@{calculatePathCost}}
+\index{calculatePathCost@{calculatePathCost}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{calculatePathCost()}{calculatePathCost()}}
+{\footnotesize\ttfamily double Graph\+::calculate\+Path\+Cost (\begin{DoxyParamCaption}\item[{const vector$<$ int $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Calculate the cost of a given path in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path for which to calculate the cost. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cost of the path. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a1638b7cf4d451d148b3db8377372b0e1}\label{class_graph_a1638b7cf4d451d148b3db8377372b0e1}} 
+\index{Graph@{Graph}!getBestPath@{getBestPath}}
+\index{getBestPath@{getBestPath}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getBestPath()}{getBestPath()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Graph\+::get\+Best\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the best path found in the graph. 
+
+\begin{DoxyReturn}{Returns}
+The best path as a vector of node IDs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a27e437958267353f4d3b889a16828b6e}\label{class_graph_a27e437958267353f4d3b889a16828b6e}} 
+\index{Graph@{Graph}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily double Graph\+::get\+Distance (\begin{DoxyParamCaption}\item[{int}]{source,  }\item[{int}]{destination }\end{DoxyParamCaption})}
+
+
+
+Returns the distance between two nodes in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The ID of the source node. \\
+\hline
+{\em destination} & The ID of the destination node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance between the source and destination nodes. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_aa9584cbd89db821348d0e019ee9457ae}\label{class_graph_aa9584cbd89db821348d0e019ee9457ae}} 
+\index{Graph@{Graph}!getMinCost@{getMinCost}}
+\index{getMinCost@{getMinCost}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getMinCost()}{getMinCost()}}
+{\footnotesize\ttfamily double Graph\+::get\+Min\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the minimum cost of the best path found. 
+
+\begin{DoxyReturn}{Returns}
+The minimum cost of the best path. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a00c89f9300992b2ac69104bb7ddcc868}\label{class_graph_a00c89f9300992b2ac69104bb7ddcc868}} 
+\index{Graph@{Graph}!resetVisited@{resetVisited}}
+\index{resetVisited@{resetVisited}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{resetVisited()}{resetVisited()}}
+{\footnotesize\ttfamily void Graph\+::reset\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the visited flag for all nodes in the graph. 
+
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a46002b237bde23afc97582dcc0a38611}\label{class_graph_a46002b237bde23afc97582dcc0a38611}} 
+\index{Graph@{Graph}!toRadians@{toRadians}}
+\index{toRadians@{toRadians}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{toRadians()}{toRadians()}}
+{\footnotesize\ttfamily double Graph\+::to\+Radians (\begin{DoxyParamCaption}\item[{double}]{degrees }\end{DoxyParamCaption})}
+
+
+
+Convert degrees to radians. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & Angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angle in radians. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(1) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a475e4fc3514ebd7c0e6cb085a052a50f}\label{class_graph_a475e4fc3514ebd7c0e6cb085a052a50f}} 
+\index{Graph@{Graph}!tspBacktracking@{tspBacktracking}}
+\index{tspBacktracking@{tspBacktracking}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspBacktracking()}{tspBacktracking()}}
+{\footnotesize\ttfamily void Graph\+::tsp\+Backtracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Solves TSP using backtracking. 
+
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n!) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a631d624a7d508563ac165fe1add39e7f}\label{class_graph_a631d624a7d508563ac165fe1add39e7f}} 
+\index{Graph@{Graph}!tspBacktracking\_RWG@{tspBacktracking\_RWG}}
+\index{tspBacktracking\_RWG@{tspBacktracking\_RWG}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspBacktracking\_RWG()}{tspBacktracking\_RWG()}}
+{\footnotesize\ttfamily void Graph\+::tsp\+Backtracking\+\_\+\+RWG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Solves TSP for a real-\/world graph using backtracking. 
+
+\begin{DoxyNote}{Note}
+It finds the optimal Hamiltonian cycle in the graph using a backtracking approach. 
+
+Time complexity -\/\texorpdfstring{$>$}{>} O(n) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a99ed70e7026d9638753681e0c052f7cb}\label{class_graph_a99ed70e7026d9638753681e0c052f7cb}} 
+\index{Graph@{Graph}!tspBacktrackingUtil@{tspBacktrackingUtil}}
+\index{tspBacktrackingUtil@{tspBacktrackingUtil}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspBacktrackingUtil()}{tspBacktrackingUtil()}}
+{\footnotesize\ttfamily void Graph\+::tsp\+Backtracking\+Util (\begin{DoxyParamCaption}\item[{int}]{curr\+Node,  }\item[{int}]{depth,  }\item[{double}]{curr\+Cost }\end{DoxyParamCaption})}
+
+
+
+Utility function for the backtracking algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+Node} & The current node being visited. \\
+\hline
+{\em depth} & The current depth of the recursion. \\
+\hline
+{\em curr\+Cost} & The current cost of the path being explored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n!) 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_graph_a5d9816ca66208318b4092a55b9ad988e}\label{class_graph_a5d9816ca66208318b4092a55b9ad988e}} 
+\index{Graph@{Graph}!tspTriangularApproximation@{tspTriangularApproximation}}
+\index{tspTriangularApproximation@{tspTriangularApproximation}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{tspTriangularApproximation()}{tspTriangularApproximation()}}
+{\footnotesize\ttfamily void Graph\+::tsp\+Triangular\+Approximation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Solves TSP for a real-\/world graph using a triangular approximation. This function solves the TSP for a real-\/world graph represented by the Nodes\+\_\+\+RWG structure using a triangular approximation approach. It calculates the geographic distances between nodes and builds a distance matrix. The function starts from node 0 and iteratively selects the next unvisited node with the shortest distance. It continues this process until all nodes are visited, forming a Hamiltonian cycle. The resulting path is stored in the best\+Path vector, and the minimum cost is calculated based on this path. 
+
+\begin{DoxyNote}{Note}
+Time complexity -\/\texorpdfstring{$>$}{>} O(n$^\wedge$2) 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_graph_8h}{Graph.\+h}}\item 
+\mbox{\hyperlink{_graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}
