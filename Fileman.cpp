@@ -1,4 +1,4 @@
-#include "fileman.h"
+#include "Fileman.h"
 
 using namespace std;
 
