@@ -19,6 +19,7 @@ class Fileman {
         void loadShipping(const std::string& filename);
         void loadTourism(const std::string& filename);
         void loadStadiums(const std::string& filename);
+        void loadGraph_RWG(const std::string& edgesFile, const std::string& nodesFile);
         Graph getGraph();
 
     private:

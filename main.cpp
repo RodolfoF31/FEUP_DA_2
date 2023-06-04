@@ -23,7 +23,8 @@ int main() {
 
     do {
 
-        cout << "1 - Backtracking algorithm" << endl;
+        cout << "1 - Toy Graphs" << endl;
+        cout << "2 - Real World Graphs" << endl;
         cout << "9 - Quit" << endl;
 
 
@@ -128,6 +129,48 @@ int main() {
                         break;
                     }
             }
+            case 2:
+
+                cout << "1 - Graph 1" << endl;
+                cout << "2 - Graph 2" << endl;
+                cout << "3 - Graph 3" << endl;
+
+                cin >> option2;
+
+                switch(option2) {
+                    case 1:
+                        {
+                            
+                            fileman = Fileman();
+                            fileman.loadGraph_RWG("Real_World_Graphs/Real-World Graphs/graph1/edges.csv", "Real_World_Graphs/Real-World Graphs/graph1/nodes.csv");
+
+                            Graph graph1 = fileman.getGraph();
+
+                            auto start = chrono::high_resolution_clock::now();
+                            graph1.tspTriangularApproximation();
+                            auto end = chrono::high_resolution_clock::now();
+
+                            auto duration = chrono::duration_cast<chrono::milliseconds>(end - start).count();
+
+                            minCost = graph1.getMinCost();
+
+                            if (minCost == numeric_limits<double>::infinity()) {
+                                cout << "No valid path found." << endl;
+                            }
+
+                            else {
+                                cout << "Minimum Cost: " << minCost << " meters" << endl;
+                            }
+
+                            
+
+                            cout << "Execution Time = " << duration << "ms" << endl;
+                            cout << endl;
+
+                            break; 
+
+                        }
+                }
 
             break;
         }

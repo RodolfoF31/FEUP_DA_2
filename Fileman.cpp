@@ -5,80 +5,127 @@ using namespace std;
 
 Fileman::Fileman() = default;
 
-void Fileman::loadShipping(const std::string& filename) {
-    std::ifstream file(filename);
+void Fileman::loadShipping(const string& filename) {
+    ifstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Failed to open the shipping file.");
+        throw runtime_error("Failed to open the shipping file.");
     }
 
-    std::string line;
-    std::getline(file, line); // Skip the header line
+    string line;
+    getline(file, line);
 
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string originStr, destinationStr, distanceStr;
-        std::getline(ss, originStr, ',');
-        std::getline(ss, destinationStr, ',');
-        std::getline(ss, distanceStr, ',');
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string originStr, destinationStr, distanceStr;
+        getline(ss, originStr, ',');
+        getline(ss, destinationStr, ',');
+        getline(ss, distanceStr, ',');
 
-        int origin = std::stoi(originStr);
-        int destination = std::stoi(destinationStr);
-        double distance = std::stod(distanceStr);
+        int origin = stoi(originStr);
+        int destination = stoi(destinationStr);
+        double distance = stod(distanceStr);
 
         graph.addEdge(origin, destination, distance);
     }
 }
 
 
-void Fileman::loadStadiums(const std::string& filename) {
-    std::ifstream file(filename);
+void Fileman::loadStadiums(const string& filename) {
+    ifstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Failed to open the stadiums file.");
+        throw runtime_error("Failed to open the stadiums file.");
     }
 
-    std::string line;
-    std::getline(file, line); // Skip the header line
+    string line;
+    getline(file, line);
 
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string originStr, destinationStr, distanceStr;
-        std::getline(ss, originStr, ',');
-        std::getline(ss, destinationStr, ',');
-        std::getline(ss, distanceStr, ',');
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string originStr, destinationStr, distanceStr;
+        getline(ss, originStr, ',');
+        getline(ss, destinationStr, ',');
+        getline(ss, distanceStr, ',');
 
-        int origin = std::stoi(originStr);
-        int destination = std::stoi(destinationStr);
-        double distance = std::stod(distanceStr);
+        int origin = stoi(originStr);
+        int destination = stoi(destinationStr);
+        double distance = stod(distanceStr);
 
         graph.addEdge(origin, destination, distance);
     }
 }
 
 
-void Fileman::loadTourism(const std::string& filename) {
-    std::ifstream file(filename);
+void Fileman::loadTourism(const string& filename) {
+    ifstream file(filename);
     if (!file.is_open()) {
-        throw std::runtime_error("Failed to open the stadiums file.");
+        throw runtime_error("Failed to open the tourism file.");
     }
 
-    std::string line;
-    std::getline(file, line);
+    string line;
+    getline(file, line);
 
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string originStr, destinationStr, distanceStr;
-        std::getline(ss, originStr, ',');
-        std::getline(ss, destinationStr, ',');
-        std::getline(ss, distanceStr, ',');
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string originStr, destinationStr, distanceStr;
+        getline(ss, originStr, ',');
+        getline(ss, destinationStr, ',');
+        getline(ss, distanceStr, ',');
 
-        int origin = std::stoi(originStr);
-        int destination = std::stoi(destinationStr);
-        double distance = std::stod(distanceStr);
+        int origin = stoi(originStr);
+        int destination = stoi(destinationStr);
+        double distance = stod(distanceStr);
 
         graph.addEdge(origin, destination, distance);
     }
 }
+
+void Fileman::loadGraph_RWG(const string& edgesFile, const string& nodesFile) {
+    ifstream nodesStream(nodesFile);
+    string nodeLine;
+
+
+    getline(nodesStream, nodeLine);
+
+    while (getline(nodesStream, nodeLine)) {
+        istringstream nodeStream(nodeLine);
+        string nodeId, longitude, latitude;
+
+        getline(nodeStream, nodeId, ',');
+        getline(nodeStream, longitude, ',');
+        getline(nodeStream, latitude, ',');
+
+        double lon = stod(longitude);
+        double lat = stod(latitude);
+
+        graph.addNode_RWG(stoi(nodeId), lon, lat);
+    }
+
+    nodesStream.close();
+
+    ifstream edgesStream(edgesFile);
+    string edgeLine;
+
+    getline(edgesStream, edgeLine);
+
+    while (getline(edgesStream, edgeLine)) {
+        istringstream edgeStream(edgeLine);
+        string origin, destination, distance;
+
+        getline(edgeStream, origin, ',');
+        getline(edgeStream, destination, ',');
+        getline(edgeStream, distance, ',');
+
+        double dist = stod(distance);
+
+        graph.addEdge_RWG(stoi(origin), stoi(destination), dist);
+    }
+
+    edgesStream.close();
+}
+
+
 
 Graph Fileman::getGraph() {
     return graph;
 }
+
